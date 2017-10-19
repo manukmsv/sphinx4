@@ -67,9 +67,9 @@ public class FileChooserExample extends JFrame implements ActionListener {
 			        configuration.setLanguageModelPath(MODEL_PATH);
 
 			        StreamSpeechRecognizer recognizer = new StreamSpeechRecognizer(configuration);
-			        //InputStream stream = new FileInputStream(filepath);
+			        InputStream stream = new FileInputStream(filepath);
 			        // ----
-			        // AudioFileDataSource dataSource = (AudioFileDataSource) cm.lookup("audioFileDataSource");
+			        /*// AudioFileDataSource dataSource = (AudioFileDataSource) cm.lookup("audioFileDataSource");
 			        AudioFileDataSource dataSource = null;
 			        URL audioFileURL = new URL("file:" + filepath);
 			        
@@ -85,11 +85,11 @@ public class FileChooserExample extends JFrame implements ActionListener {
 		                dataSource.setInputStream(decodedAudioStream, null);
 			        } else {
 			        	dataSource.setAudioFile( audioFileURL, null);
-			        }
+			        }*/
 	                // ----
 			        
 			        
-			        //recognizer.startRecognition(stream);
+			        recognizer.startRecognition(stream);
 			        String TEXT = "";
 			        SpeechResult result;
 			        while ((result = recognizer.getResult()) != null) {
